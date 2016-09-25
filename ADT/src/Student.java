@@ -1,3 +1,10 @@
+/****************************************************************************
+ *
+ * Created by: Chris Karpinski
+ * Created on: Sept 2016
+ * This is the class for a student which includes their average and name
+ *
+ ****************************************************************************/
 
 public class Student {
 
