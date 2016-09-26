@@ -18,6 +18,7 @@ public class AbstractDataType {
 
 		String nameOfStudent;
 		int average;
+		String a = "bob";
 		Student.GRADE grade;
 		int runningSum = 0;
 		String cont = "Y";
