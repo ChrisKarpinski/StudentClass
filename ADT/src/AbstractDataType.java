@@ -8,6 +8,7 @@
  ****************************************************************************/
 
 import java.util.Scanner;
+
 import java.util.Arrays;
 
 public class AbstractDataType {
@@ -17,13 +18,14 @@ public class AbstractDataType {
 
 		String nameOfStudent;
 		int average;
+		Student.GRADE grade;
 		int runningSum = 0;
 		String cont = "Y";
 		Student [] studentData = new Student [5];
 		Scanner read = new Scanner(System.in);
 		
 		while (cont.equals("Y")) {
-		System.out.println("Enter the student's name and average");
+		System.out.println("Enter the student's name, average and grade");
 		System.out.println("Name: ");
 		
 		nameOfStudent = read.next();
@@ -31,13 +33,15 @@ public class AbstractDataType {
 		System.out.println("Average: ");
 		average = read.nextInt();
 		
-		Student student = new Student(average, nameOfStudent);
+		System.out.println("Grade: ");
+		grade = Student.GRADE.valueOf(read.next());
+		Student student = new Student(average, nameOfStudent, grade);
 		
 		
 		studentData[studentData.length-5] = student;
 		
 		System.out.println("The student's name is: " + student.GetName() + ", and their average is: "
-				+ student.GetAverage());
+				+ student.GetAverage() + " and their grade is: " + student.GetGrade().ReturnPosition());
 		System.out.println("There are: " + (studentData.length-4) + " student(s) in the class");
 		runningSum = runningSum + studentData[studentData.length-5].GetAverage();
 		System.out.println("The class average is: " + (runningSum/(studentData.length-4)));
